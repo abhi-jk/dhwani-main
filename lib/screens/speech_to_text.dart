@@ -95,17 +95,19 @@ class _SpeechState extends State<Speech> {
     if (_text.isNotEmpty) {
       final String query = _text.toLowerCase();
       searchResults = demo.where((tile) {
-        return tile.tag.any((tag) => query.toLowerCase().contains(tag.toLowerCase()));
+        return tile.tag
+            .any((tag) => query.toLowerCase().contains(tag.toLowerCase()));
       }).toList();
     }
 
-    if(searchResults.isEmpty) {
+    if (searchResults.isEmpty) {
       setState(() {
         isLoading = false;
       });
     }
     return searchResults;
   }
+
   bool _isOn = false;
   bool isLoading = true;
 
@@ -131,7 +133,7 @@ class _SpeechState extends State<Speech> {
           ),
         ),
         toolbarHeight: 70,
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.mic, size: 30), // Microphone icon
@@ -190,7 +192,7 @@ class _SpeechState extends State<Speech> {
                 ),
                 const SizedBox(width: 10.0),
                 SwitcherButton(
-                  onChange: (value){
+                  onChange: (value) {
                     setState(() {
                       _isOn = !_isOn;
                     });
@@ -204,7 +206,8 @@ class _SpeechState extends State<Speech> {
             child: Stack(
               children: [
                 GridView.count(
-                  crossAxisCount: MediaQuery.of(context).size.width > 600 ? 4 : 2,
+                  crossAxisCount:
+                      MediaQuery.of(context).size.width > 600 ? 4 : 2,
                   children: _performSearch().map<Widget>((tile) {
                     return tileWid(tile, _isOn);
                   }).toList(),
@@ -219,7 +222,10 @@ class _SpeechState extends State<Speech> {
                       padding: EdgeInsets.all(20.0),
                       child: Text(
                         'No Matches Found. Speak!!',
-                        style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold, color: Colors.white),
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
                       ),
                     ),
                   ),
@@ -240,8 +246,7 @@ class _SpeechState extends State<Speech> {
         ),
         child: SafeArea(
           child: Padding(
-            padding:
-            const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
               rippleColor: Colors.grey[300]!,
               hoverColor: Colors.grey[100]!,
@@ -262,7 +267,7 @@ class _SpeechState extends State<Speech> {
                 ),
                 GButton(
                   onPressed: () {
-                    Get.offAll(() =>  Libraries());
+                    Get.offAll(() => Libraries());
                   },
                   icon: LineIcons.book,
                   text: 'Libraries',
@@ -305,7 +310,7 @@ class _SpeechState extends State<Speech> {
         setState(() {
           _isListening = true;
           _text = 'Listening...';
-          isLoading = true;// Reset the flag before starting to listen
+          isLoading = true; // Reset the flag before starting to listen
         });
         _speech.listen(
           localeId: 'ml_IN',
@@ -328,7 +333,4 @@ class _SpeechState extends State<Speech> {
       _speech.stop();
     }
   }
-
-
-
 }

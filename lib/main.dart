@@ -1,6 +1,7 @@
 import 'package:dhwani/SplashScreen/splash.dart';
 
 import 'package:dhwani/screens/bottom_bar.dart';
+import 'package:dhwani/screens/login_screen.dart';
 import 'package:dhwani/screens/search.dart';
 import 'package:dhwani/screens/speech_to_text.dart';
 import 'package:firebase_core/firebase_core.dart';
