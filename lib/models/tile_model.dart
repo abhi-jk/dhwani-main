@@ -82,9 +82,9 @@ List<tile> demo = [
   // -body parts
   tile(['body', 'pain'],'pain', 'assets/into/pain.png', 'pain','വേദന'),
   tile(['body', 'hand'],'hand', 'assets/into/hand.png', 'hand','കൈ'),
-  tile(['body', 'leg', 'foot'],'leg', 'assets/into/leg.png', 'leg','കാല്'),
+  tile(['body', 'leg'],'leg', 'assets/into/leg.png', 'leg','കാല്'),
   tile(['body', 'finger'],'finger', 'assets/into/finger.png', 'finger','വിരല്'),
-  tile(['body', 'eyes'],'eyes', 'assets/into/eyes.png', 'eyes','കണ്ണുകൾ'),
+  tile(['body', 'eyes','eye'],'eyes', 'assets/into/eyes.png', 'eyes','കണ്ണുകൾ'),
   tile(['body', 'ear'],'ear', 'assets/into/ear.png', 'ear','ചെവി'),
   tile(['body', 'nose'],'nose', 'assets/into/nose.png', 'nose','മൂക്ക്'),
   tile(['body', 'face'],'face', 'assets/into/face.png', 'face','മുഖം'),
@@ -98,9 +98,9 @@ List<tile> demo = [
   tile(['hobbies', 'draw', 'paint'],'draw', 'assets/into/draw.png', 'draw','വരയ്ക്കുക'),
   tile(['hobbies', 'dance', 'music', 'dancing'],'dance', 'assets/into/dance.png', 'dance','നൃത്തം'),
   // - prbs
-  tile(['me', 'us', 'prbs'],'I', 'assets/into/i.png', 'i','ഞാൻ'),
+  tile(['me', 'iam','prbs'],'I', 'assets/into/i.png', 'i','ഞാൻ'),
   tile(['me', 'us', 'fine', 'okay', 'prbs'],'fine', 'assets/into/fine.png', 'I am fine','എനിക്ക് സുഖമാണ്'),
-  tile(['me', 'us', 'want', 'yes', 'prbs'],'want', 'assets/into/iwant.png', 'want','വേണം'),
+  tile(['me', 'us', 'want', 'prbs'],'want', 'assets/into/iwant.png', 'want','വേണം'),
   tile(['me', 'us', 'want', 'no', 'do not', 'prbs'],'not', 'assets/into/notwant.png', 'dont want','വേണ്ട'),
   // - greet
   tile(['hello', 'greet','hi','greetings'],'Hello', 'assets/into/hello.png', 'Hello','നമസ്കാരം'),

@@ -95,9 +95,20 @@ class _SpeechState extends State<Speech> {
     if (_text.isNotEmpty) {
       final String query = _text.toLowerCase();
       searchResults = demo.where((tile) {
-        return tile.tag.any((tag) => query.toLowerCase().contains(tag.toLowerCase()));
+        return
+          tile.tag.any((tag) => query.toLowerCase().contains(tag.toLowerCase()));
       }).toList();
     }
+
+  // List<tile> _performSearch() {
+  //   searchResults = [];
+  //   if (_text.isNotEmpty) {
+  //     final String query = _text.toLowerCase();
+  //     searchResults = demo.where((tile) {
+  //       return
+  //           tile.tag.any((tag) => StringSimilarity.compareTwoStrings(tag.toLowerCase(), query) > 0.5);})
+  //           .toList();
+  //   }
 
     if(searchResults.isEmpty) {
       setState(() {

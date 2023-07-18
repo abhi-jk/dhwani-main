@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:dhwani/screens/bottom_bar.dart';
+import 'package:dhwani/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void navigateToHome() {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => Example()),
+      MaterialPageRoute(builder: (context) => login()),
     );
   }
 
